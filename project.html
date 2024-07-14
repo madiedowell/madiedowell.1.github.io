@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 1</title>
+    <link href="./task.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>Project 1</header>
+    <h2>[ <a href="./home.html">Home</a>]</h2>
+    
+    <div class="container">
+        <button id="addTaskButton">Add Task</button>
+
+    </div>
+
+    <div id="addTaskModal" class="add-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <form id="addTaskForm">
+                <label for="add-task-name">Task Name:</label>
+                <input type="text" id="add-task-name" name="task-name"><br><br>
+                <label for="add-start-date">Start Date</label>
+                <input type="date" id="add-start-date" name="start-date"><br><br>
+                <label for="add-num-day">Required Days:</label>
+                <input type="number" id="add-num-days" name="num-days"><br><br>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="editTaskModal" class="edit-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <label for="edit-task-name">Task Name:</label>
+                <input type="text" id="edit-task-name" name="task-name"><br><br>
+                <label for="edit-start-date">Target Start Date</label>
+                <input type="date" id="edit-start-date" name="start-date"><br><br>
+                <label for="edit-num-days">Required Days:</label>
+                <input type="number" id="edit-num-days" name="num-days"><br><br>
+                <label for="edit-actual-start-date">Actual Start Date</label>
+                <input type="date" id="edit-actual-start-date" name="start-date"><br><br>
+                <button type="submit">Edit Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="doneModal" class="done-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Congrats on completing this task!</h2>
+            <form id="doneTaskForm">
+                <label for="set-actual-end-date">Actual End Date:</label>
+                <input type="date" id="set-actual-end-date" name="end-date"><br><br>
+                <button type="submit">Complete Task</button>
+            </form>
+        </div>
+
+    </div>
+    <script src="./task.js" defer></script>
+</body>
+</html>

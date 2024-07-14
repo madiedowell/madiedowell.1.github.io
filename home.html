@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Tracker</title>
+    <link href="./task.css" rel="stylesheet" type="text/css" />
+    <!-- <script src="./home.js" defer></script>  -->
+</head>
+<body>
+    <header>Project Tracker</header>
+    <h2>[ <a href="./home.html" id="homeLink">Home</a>]</h2> <!-- Ensure the ID for the link -->
+    <div class="projects-container">
+        <a href="project.html" class="square-box">
+            <div class="box-1-header">Project 1</div>
+            <div class="deadline-label">
+                <label for="input-deadline">Completion Date:</label>
+                <span id="completion-date"></span>
+            </div>
+        </a>
+    </div>
+
+    <button id="addProjectButton">Add Project</button>
+    
+
+    <script>
+        // Directly embedding script for demonstration; normally, keep in JS files
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to update completion date
+            function getProjectEndDate(tasks) {
+                if (tasks.length === 0) {
+                    return; // Handle case where tasks array is empty
+                }
+            
+                const lastTask = tasks[tasks.length - 1];
+                let completionDate = lastTask.actualEndDate || lastTask.expectedEndDate || lastTask.endDate;
+
+                if (!completionDate) {
+                    completionDate = "No completion date available"; // Or any default message
+                }
+
+                const projectEndDateContainer = document.getElementById('completion-date');
+
+                if (projectEndDateContainer) {
+                    projectEndDateContainer.textContent = completionDate;
+                } else {
+                    console.error("Element with id 'completion-date' not found");
+                }
+            }
+
+            // Function to load tasks from localStorage
+            function loadTasks() {
+                const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+                console.log(tasks);
+                return tasks;
+            }
+            
+            // Function to update completion date when home link is clicked
+            document.getElementById('homeLink').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default navigation
+                updateCompletionDate();
+            });
+
+            // Function to update completion date on page load
+            function updateCompletionDate() {
+                const tasks = loadTasks();
+                getProjectEndDate(tasks);
+            }
+
+            // Initial call to update completion date on page load
+            updateCompletionDate();
+        });
+    </script>
+
+</body>
+</html>
