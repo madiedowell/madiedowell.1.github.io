@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var firstAddModal = document.getElementById("firstAddTaskModal");
     var addModal = document.getElementById("addTaskModal");
     var editModal = document.getElementById("editTaskModal");
+    var doneModal = document.getElementById("doneModal");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close");
