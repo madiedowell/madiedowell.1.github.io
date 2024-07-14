@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         element.onclick = function(event) {
             addModal.style.display = "none";
             editModal.style.display = "none";
+            doneModal.style.display = "none";
         };
     });
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target == addModal || event.target == editModal) {
             addModal.style.display = "none";
             editModal.style.display = "none";
+            doneModal.style.display = "none";
         }
     }
 
